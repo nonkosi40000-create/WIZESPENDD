@@ -1,0 +1,18 @@
+<resources>
+    <color name="green_primary">#0BA84A</color>
+    <color name="green_dark">#087F3A</color>
+
+    <color name="purple_primary">#A450F6</color>
+    <color name="purple_light">#B876F8</color>
+
+    <color name="bg_start">#E8F5E9</color>
+    <color name="bg_end">#C8E6C9</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="input_bg">#FFFFFF</color>
+
+    <color name="text_primary">#000000</color>
+    <color name="text_secondary">#000000</color>
+
+    <color name="divider">#E5E7EB</color>
+</resources>

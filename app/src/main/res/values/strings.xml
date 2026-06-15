@@ -1,0 +1,77 @@
+<resources>
+    <string name="app_name">WIZESPEND</string>
+    <string name="nav_home">Home</string>
+    <string name="nav_ai_coach">AI Coach</string>
+    <string name="nav_add">Add</string>
+    <string name="nav_goals">Goals</string>
+    <string name="nav_profile">Profile</string>
+
+    <!-- AI Insights -->
+    <string name="ai_performance_title">🎉 You\'re Doing Great!</string>
+    <string name="ai_performance_desc">You are doing better than 70% of users this week 🚀</string>
+    <string name="ai_performance_label">Your Performance</string>
+    <string name="ai_performance_stat">Top 30%</string>
+    <string name="ai_saved_month">Saved This Month</string>
+    <string name="ai_saved_amount">R1,250</string>
+    <string name="ai_saved_increase">+15% from last month</string>
+    <string name="ai_goals_completed">Goals Completed</string>
+    <string name="ai_goals_stat">3/5</string>
+    <string name="ai_goals_remaining">2 goals remaining</string>
+    <string name="ai_challenge_title">Daily Challenge</string>
+    <string name="ai_challenge_points">+50 pts</string>
+    <string name="ai_challenge_desc">🎯 No Spend Challenge: Try not to spend any money today!</string>
+    <string name="ai_challenge_time">5 hours remaining</string>
+    <string name="ai_summary_title">Weekly Insights Summary</string>
+    <string name="ai_summary_item1_title">Stayed under budget 5 days</string>
+    <string name="ai_summary_item1_desc">Great job managing expenses!</string>
+    <string name="ai_summary_item2_title">Saved 12% more than last week</string>
+    <string name="ai_summary_item2_desc">You\'re on the right track!</string>
+    <string name="ai_summary_item3_title">2 goals are on track</string>
+    <string name="ai_summary_item3_desc">Keep up the momentum!</string>
+    <string name="ai_percent_0">0%</string>
+    <string name="ai_percent_50">50%</string>
+    <string name="ai_percent_100">100%</string>
+
+    <!-- Profile -->
+    <string name="profile_initials">B</string>
+    <string name="profile_name">Brian</string>
+    <string name="profile_email">nnkosee@gmail.com</string>
+    <string name="profile_edit_btn">Edit Profile</string>
+    <string name="profile_details_title">Personal Details</string>
+    <string name="profile_label_username">Username</string>
+    <string name="profile_label_email">Email</string>
+    <string name="profile_label_phone">Phone</string>
+    <string name="profile_label_address">Address</string>
+    <string name="profile_label_dob">Date of Birth</string>
+    <string name="profile_not_provided">Not provided</string>
+    <string name="profile_member_since">Member Since</string>
+    <string name="profile_member_date">March 2026</string>
+    <string name="profile_achievements_title">Achievements</string>
+    <string name="profile_achievements_count">🏆 5</string>
+    <string name="profile_ach_budget_master">Budget Master</string>
+    <string name="profile_ach_budget_master_desc">Stayed under budget for 3 months</string>
+    <string name="profile_ach_savings_starter">Savings Starter</string>
+    <string name="profile_ach_savings_starter_desc">Saved your first R1,000</string>
+    <string name="profile_ach_tracker_pro">Tracker Pro</string>
+    <string name="profile_ach_tracker_pro_desc">Logged 50+ expenses</string>
+    <string name="profile_ach_goal_getter">Goal Getter</string>
+    <string name="profile_ach_goal_getter_desc">Completed your first goal</string>
+    <string name="profile_ach_quick_learner">Quick Learner</string>
+    <string name="profile_ach_quick_learner_desc">Used AI Assistant 10 times</string>
+
+    <!-- Accessibility Descriptions -->
+    <string name="desc_profile_image">Profile Image</string>
+    <string name="desc_camera_icon">Change Profile Picture</string>
+    <string name="desc_trending_icon">Trending Up Icon</string>
+    <string name="desc_goals_icon">Goals Icon</string>
+    <string name="desc_fire_icon">Challenge Fire Icon</string>
+    <string name="desc_lightning_icon">Insight Lightning Icon</string>
+    <string name="desc_person_icon">Person Icon</string>
+    <string name="desc_email_icon">Email Icon</string>
+    <string name="desc_phone_icon">Phone Icon</string>
+    <string name="desc_map_icon">Map Icon</string>
+    <string name="desc_calendar_icon">Calendar Icon</string>
+    <string name="desc_success_icon">Success Icon</string>
+    <string name="desc_header_bg">Header Background</string>
+    <string name="desc_add_button">Add Transaction Button</string>
+</resources>

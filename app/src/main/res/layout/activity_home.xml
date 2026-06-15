@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8F9FA">
+
+    <!-- Subtle Background Accent -->
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:alpha="0.03"
+        android:src="@drawable/ic_piggy_bank"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="-40dp"
+        android:layout_marginBottom="80dp"
+        app:tint="#1A237E" />
+
+    <!-- HEADER -->
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:background="@drawable/bg_header"
+        android:orientation="vertical"
+        android:padding="20dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cvHomeProfile"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                app:cardCornerRadius="22.5dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="#60FFFFFF">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/ivHomeProfile"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_person"
+                        app:tint="@android:color/white" />
+
+                    <TextView
+                        android:id="@+id/tvHomeProfileInitial"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="U"
+                        android:textColor="@android:color/white"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+                </FrameLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/cvHomeProfile"
+                android:layout_marginStart="12dp"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/tvGreeting"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Welcome,"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp" />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+                    <TextView
+                        android:id="@+id/tvWelcomeName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="User"
+                        android:textColor="@android:color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/tvHeaderStreak"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="🔥 1"
+                        android:textColor="#FFD54F"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/searchView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark"
+                app:searchIcon="@android:drawable/ic_menu_search"
+                app:queryHint="Search..." />
+        </RelativeLayout>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            app:cardBackgroundColor="#1A237E"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="0dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+                <TextView
+                    android:id="@+id/tvBudgetProgress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Monthly Budget Progress"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+                <ProgressBar
+                    android:id="@+id/pbBudget"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="8dp"
+                    android:layout_marginTop="10dp"
+                    android:max="100"
+                    android:progress="0"
+                    android:progressTint="@android:color/white" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
+
+    <!-- CONTENT -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        app:layout_constraintBottom_toTopOf="@id/bottomNav"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/header">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- Gamification: Rewards & Badges -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:text="Your Achievements"
+                android:textColor="#1C1C1E"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="2dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center">
+                        <!-- Budget Status Badge -->
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
+                            <ImageView
+                                android:id="@+id/ivBadgeBudget"
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:src="@drawable/ic_trophy"
+                                app:tint="#9E9E9E"/>
+                            <TextView
+                                android:id="@+id/tvBadgeTitle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Budget Master"
+                                android:textSize="10sp"
+                                android:textStyle="bold"/>
+                        </LinearLayout>
+                        <!-- Streak Badge -->
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
+                            <ImageView android:layout_width="48dp" android:layout_height="48dp" android:src="@drawable/ic_fire" app:tint="#FF5722"/>
+                            <TextView
+                                android:id="@+id/tvStreak"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0-Day Streak"
+                                android:textSize="10sp"
+                                android:textStyle="bold"/>
+                        </LinearLayout>
+                        <!-- Goal Badge -->
+                        <LinearLayout android:id="@+id/badgeGoalHero" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
+                            <ImageView android:layout_width="48dp" android:layout_height="48dp" android:src="@drawable/ic_piggy_bank" app:tint="#9E9E9E"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Goal Hero" android:textSize="10sp"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#F3F4F6" android:layout_marginTop="16dp" android:layout_marginBottom="16dp"/>
+                    <TextView
+                        android:id="@+id/tvRewardHint"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Next Reward: R50 Cashback Voucher"
+                        android:textColor="#6B7280"
+                        android:textSize="12sp" />
+                    <ProgressBar
+                        android:id="@+id/pbReward"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="4dp"
+                        android:layout_marginTop="8dp"
+                        android:max="100"
+                        android:progress="0"
+                        android:progressTint="#1A237E" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Categories -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:text="Spending Summary"
+                android:textColor="#1C1C1E"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="2">
+                <!-- Food -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardFood"
+                    android:layout_width="0dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="6dp"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="2dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+                        <ImageView
+                            android:id="@+id/ivCategoryFood"
+                            android:layout_width="match_parent"
+                            android:layout_height="80dp"
+                            android:layout_marginBottom="8dp"
+                            android:scaleType="centerCrop"
+                            android:visibility="gone" />
+                        <TextView android:id="@+id/tvLabelFood" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🍔 Food" android:textStyle="bold"/>
+                        <TextView android:id="@+id/tvSpentFood" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="R0.00" android:textColor="#6B7280" android:textSize="12sp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Transport -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardTransport"
+                    android:layout_width="0dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="6dp"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="2dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+                        <ImageView
+                            android:id="@+id/ivCategoryTransport"
+                            android:layout_width="match_parent"
+                            android:layout_height="80dp"
+                            android:layout_marginBottom="8dp"
+                            android:scaleType="centerCrop"
+                            android:visibility="gone" />
+                        <TextView android:id="@+id/tvLabelTransport" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🚗 Transport" android:textStyle="bold"/>
+                        <TextView android:id="@+id/tvSpentTransport" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="R0.00" android:textColor="#6B7280" android:textSize="12sp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Shopping -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardShopping"
+                    android:layout_width="0dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="6dp"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="2dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+                        <ImageView
+                            android:id="@+id/ivCategoryShopping"
+                            android:layout_width="match_parent"
+                            android:layout_height="80dp"
+                            android:layout_marginBottom="8dp"
+                            android:scaleType="centerCrop"
+                            android:visibility="gone" />
+                        <TextView android:id="@+id/tvLabelShopping" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🛍️ Shopping" android:textStyle="bold"/>
+                        <TextView android:id="@+id/tvSpentShop" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="R0.00" android:textColor="#6B7280" android:textSize="12sp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Other -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardOther"
+                    android:layout_width="0dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="6dp"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="2dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+                        <ImageView
+                            android:id="@+id/ivCategoryOther"
+                            android:layout_width="match_parent"
+                            android:layout_height="80dp"
+                            android:layout_marginBottom="8dp"
+                            android:scaleType="centerCrop"
+                            android:visibility="gone" />
+                        <TextView android:id="@+id/tvLabelOther" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="📦 Other" android:textStyle="bold"/>
+                        <TextView android:id="@+id/tvSpentOther" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="R0.00" android:textColor="#6B7280" android:textSize="12sp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </GridLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- Bottom Nav -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:background="@android:color/white"
+        app:elevation="8dp"
+        app:itemIconTint="@color/nav_item_color"
+        app:itemTextColor="@color/nav_item_color"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:menu="@menu/bottom_menu" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_add_circle"
+        app:backgroundTint="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="@id/bottomNav"
+        app:layout_constraintEnd_toEndOf="@id/bottomNav"
+        app:layout_constraintStart_toStartOf="@id/bottomNav"
+        app:layout_constraintTop_toTopOf="@id/bottomNav"
+        app:layout_constraintVertical_bias="0.2"
+        app:tint="#1A237E"
+        app:borderWidth="0dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
